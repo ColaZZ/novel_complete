@@ -18,6 +18,7 @@ class CompleteHandler(FoundHandler):
         if not url:
             return self.write_json(status=-1, msg="请稍后重试")
 
+        url = "https://www.35kushu.com/35zwhtml/" + url
         content = requests.get(url).content.decode("utf-8")
         tree = etree.HTML(content)
         path_content = '//div[@id="main"]/div[@id="content"]/text()'
