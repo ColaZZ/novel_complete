@@ -23,6 +23,7 @@ class CompleteHandler(FoundHandler):
         tree = etree.HTML(content)
         path_content = '//div[@id="main"]/div[@id="content"]/text()'
         node_content = tree.xpath(path_content)
+        node_text = "".join(node_content)
 
         temp_path_base = str(url[33:])
         tp_list = temp_path_base.split("/")
@@ -38,12 +39,9 @@ class CompleteHandler(FoundHandler):
 
         if not os.path.exists(target_path):
             os.makedirs(target_path)
-        if node_content:
-            with open(filename_path, 'w', encoding='utf-8') as f:
-                f.write(node_content[0])
-        else:
-            return self.write_json(status=-2, msg="请稍后重试")
-        # print(node_content)
+        with open(filename_path, 'w', encoding='utf-8') as f:
+            f.write(node_text)
+
 
 
 
