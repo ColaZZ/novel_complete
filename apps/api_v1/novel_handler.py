@@ -37,8 +37,11 @@ class CompleteHandler(FoundHandler):
 
         if not os.path.exists(target_path):
             os.makedirs(target_path)
-        with open(filename_path, 'w', encoding='utf-8') as f:
-            f.write(node_content)
+        if node_content:
+            with open(filename_path, 'w', encoding='utf-8') as f:
+                f.write(node_content[0])
+        else:
+            return self.write_json(status=-2, msg="请稍后重试")
         # print(node_content)
 
 
