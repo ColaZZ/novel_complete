@@ -28,6 +28,7 @@ class CompleteHandler(FoundHandler):
         path_content = '//div[@id="main"]/div[@id="content"]/text()'
         node_content = tree.xpath(path_content)
         node_text = "<br><br>".join(node_content[1:])
+        print(node_text)
 
         temp_path_base = str(url[33:])
         tp_list = temp_path_base.split("/")
