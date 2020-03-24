@@ -18,7 +18,7 @@ API_PORT = 8300
 # REDIS_DB_SPARE = 2
 
 # mysql服务器
-MYSQL_HOST = "47.244.114.115"
+MYSQL_HOST = "47.56.7.182"
 MYSQL_PORT = 3306
 MYSQL_DB = "distributed_spider"
 MYSQL_USER = "root"
