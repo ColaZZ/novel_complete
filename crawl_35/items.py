@@ -36,3 +36,6 @@ class DailyUpdateItem(scrapy.Item):
     chapter_sort = scrapy.Field()
     words = scrapy.Field()
 
+
+
+
