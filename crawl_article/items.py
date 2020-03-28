@@ -14,3 +14,4 @@ class ArticleItem(scrapy.Item):
     chapter_content = scrapy.Field()
     chapter_url_base = scrapy.Field()
     article_url = scrapy.Field()
+    chapter_sort = scrapy.Field()
