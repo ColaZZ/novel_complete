@@ -27,9 +27,9 @@ class ArticlePipeline(object):
 
     # 主要处理方法
     def process_item(self, item, spider):
-        article_title = item.get('article_title', '')
+        # article_title = item.get('article_title', '')
         chapter_name = item.get('chapter_name', '')
-        chapter_content = item.get('chapter_content', '')
+        # chapter_content = item.get('chapter_content', '')
         chapter_url_base = item.get('chapter_url_base', '')
         article_url = item.get('article_url', '')
         chapter_sort = item.get('chapter_sort', -1)
@@ -37,6 +37,8 @@ class ArticlePipeline(object):
         chapter_id = int(chapter_url_base[:-5])
         # 爬虫更新时间
         updated_at = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+
+        # print("crawl_result", chapter_name, chapter_url_base, article_url, chapter_sort)
 
         sql_id = "select id from articles where url=%s"
         self.cur.execute(sql_id, [article_url])

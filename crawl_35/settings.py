@@ -9,10 +9,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'daily_update'
 
-SPIDER_MODULES = ['daily_update.spiders']
-NEWSPIDER_MODULE = 'daily_update.spiders'
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+BOT_NAME = 'crawl_35'
+
+SPIDER_MODULES = ['crawl_35.spiders']
+NEWSPIDER_MODULE = 'crawl_35.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -65,7 +69,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'daily_update.pipelines.DailyUpdatePipeline': 300,
+   'crawl_35.pipelines.DailyUpdatePipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -89,7 +93,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-LOG_LEVEL = 'WARNING'
+# LOG_LEVEL = 'WARNING'
 
 # 过滤器
 # SCHEDULER = "scrapy_redis.scheduler.Scheduler"

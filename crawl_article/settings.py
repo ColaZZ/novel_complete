@@ -9,6 +9,10 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 BOT_NAME = 'crawl_article'
 
 SPIDER_MODULES = ['crawl_article.spiders']
@@ -65,7 +69,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'crawl_article.pipelines.DailyUpdatePipeline': 300,
+   'crawl_article.pipelines.ArticlePipeline': 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -89,7 +93,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-LOG_LEVEL = 'WARNING'
+# LOG_LEVEL = 'WARNING'
 
 # 过滤器
 # SCHEDULER = "scrapy_redis.scheduler.Scheduler"

@@ -1,2 +1,9 @@
 *.pyc
 .idea/
+*.egg
+dbs/
+crawl_article/project.egg-info/
+crawl_35/project.egg-info/
+crawl_35/build/
+logs/
+twistd.pid
