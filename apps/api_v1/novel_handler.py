@@ -23,7 +23,10 @@ class CompleteHandler(FoundHandler):
             return self.write_json(status=-1, msg="请稍后重试")
 
         url = "https://www.35kushu.com/35zwhtml/" + url
-        content = requests.get(url).content.decode("utf-8")
+        try:
+            content = requests.get(url).content.decode("utf-8")
+        except:
+            return self.write_json(status=-2, msg="请求链接未响应,请检查url")
         tree = etree.HTML(content)
         path_content = '//div[@id="main"]/div[@id="content"]/text()'
         node_content = tree.xpath(path_content)
