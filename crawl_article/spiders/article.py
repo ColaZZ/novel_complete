@@ -7,7 +7,7 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.http import Request
 
-from lib.chn_to_arab import changeChineseNumToArab
+from utils.chn_to_arab import changeChineseNumToArab
 from ..items import ArticleItem
 import crawl_article.spiders as cs
 
@@ -29,6 +29,7 @@ class ArticleSpider(cs.ArticleSpider):
                                    '| //div[@id="indexmain"]//div[@id="list"]/dl/dd/a/@href ').extract()
         head_list = response.xpath(
             '//head/meta[@property="og:description"]/@content | //head/meta[@property="og:image"]/@content').extract()
+        category_list = response.xpath('//div[@id="indexmain"]//div[@id="indexsidebar"]//div[@id="bread"]/a/@href').extract()
         menu_list_group = [menu_list[i:i + 2] for i in range(0, len(menu_list), 2)]
         for index, ml in enumerate(menu_list_group):
             chapter_url_base = ml[0]
@@ -56,6 +57,10 @@ class ArticleSpider(cs.ArticleSpider):
             meta["info"] = head_list[0][:511]
             meta["thumb"] = head_list[1]
             meta["chapter_sort"] = chapter_sort
+
+            category_id = category_list[1].split('/')[1][-1]
+            meta["category_id"] = category_id
+
             yield Request(chapter_url, meta=meta, callback=self.parse_content)
 
     def parse_content(self, response):
@@ -69,4 +74,5 @@ class ArticleSpider(cs.ArticleSpider):
         item['chapter_url_base'] = response.meta["chapter_url_base"]
         item['article_url'] = self.start_urls[0]
         item['chapter_sort'] = response.meta["chapter_sort"]
+        item['category_id'] = response.meta["category_id"]
         yield item

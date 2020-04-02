@@ -11,7 +11,11 @@
 
 
 import os
+import sys
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# sys.path.append('/mnt/d/novel_complete')
+sys.path.append('/home/web/tornado_server')
+
 
 BOT_NAME = 'crawl_35'
 
@@ -99,16 +103,16 @@ ITEM_PIPELINES = {
 # SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
 # redis 使用的端口和地址
-# REDIS_HOST = '47.56.7.182'
-# REDIS_PORT = 6379
-# REDIS_DB = 1
-# # redis字符集设定
-# REDIS_ENCODING = 'utf8'
-
-
-
-REDIS_HOST = '127.0.0.1'
+REDIS_HOST = '47.56.7.182'
 REDIS_PORT = 6379
 REDIS_DB = 1
-#redis字符集设定
+# redis字符集设定
 REDIS_ENCODING = 'utf8'
+
+
+
+# REDIS_HOST = '127.0.0.1'
+# REDIS_PORT = 6379
+# REDIS_DB = 1
+# #redis字符集设定
+# REDIS_ENCODING = 'utf8'

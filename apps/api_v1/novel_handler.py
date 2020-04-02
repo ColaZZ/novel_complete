@@ -9,8 +9,8 @@ import requests
 from lxml import etree
 
 from apps.found_handler import FoundHandler
-from lib.routes import route
-from lib.chn_to_arab import changeChineseNumToArab
+from utils.routes import route
+from utils.chn_to_arab import changeChineseNumToArab
 
 
 @route('/complete')

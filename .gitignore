@@ -7,3 +7,6 @@ crawl_35/project.egg-info/
 crawl_35/build/
 logs/
 twistd.pid
+project.egg-info/
+build/
+setup.py

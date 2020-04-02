@@ -16,7 +16,7 @@ import tornado.ioloop
 import tornado.web
 
 from settings import *
-from lib.routes import route
+from utils.routes import route
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
 path = lambda *a: os.path.join(*a)

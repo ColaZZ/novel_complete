@@ -15,3 +15,4 @@ class ArticleItem(scrapy.Item):
     chapter_url_base = scrapy.Field()
     article_url = scrapy.Field()
     chapter_sort = scrapy.Field()
+    category_id = scrapy.Field()

@@ -8,9 +8,9 @@ import time
 from settings import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PWD, MYSQL_DB
 # from string import lower
 import json
-# from lib import session
-# from lib.constant import SESSION_REDIS_EXPIRES
-# from lib.utils import to_str
+# from utils import session
+# from utils.constant import SESSION_REDIS_EXPIRES
+# from utils.utils import to_str
 
 
 class FoundHandler(tornado.web.RequestHandler):

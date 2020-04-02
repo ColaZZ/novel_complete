@@ -4,22 +4,27 @@ import re
 
 import requests
 from lxml import etree
-from lib.chn_to_arab import changeChineseNumToArab
+from utils.chn_to_arab import changeChineseNumToArab
 
 
 def testSpider():
-    url = "https://www.35kushu.com/35zwhtml/102/102004/"
+    url = "https://www.35kushu.com/35zwhtml/98/98744/"
     content = requests.get(url).content.decode("utf-8")
     tree = etree.HTML(content)
-    path_content = '//div[@id="indexmain"]//div[@id="list"]/dl/dd/a/@title | //div[@id="indexmain"]//div[@id="list"]/dl/dd/a/@href '
+
+    # path_content = '//div[@id="indexmain"]//div[@id="list"]/dl/dd/a/@title | //div[@id="indexmain"]//div[@id="list"]/dl/dd/a/@href '
     # node_content = tree.xpath(path_content)
     # menu_list_group = [node_content[i:i + 2] for i in range(0, len(node_content), 2)]
 
-    head_path = '//head/meta[@property="og:description"]/@content | //head/meta[@property="og:image"]/@content'
-    node_content = tree.xpath(head_path)
-    print(node_content)
+    # head_path = '//head/meta[@property="og:description"]/@content | //head/meta[@property="og:image"]/@content'
+    # node_content = tree.xpath(head_path)
 
+    category_path = '//div[@id="indexmain"]//div[@id="indexsidebar"]//div[@id="bread"]/a/@href'
+    node_content = tree.xpath(category_path)
+    ll = node_content[1].split('/')[1][-1]
+    print(ll)
 
+    # // *[ @ id = "bread"] / a[2]
     # print(menu_list_group)
     # for index, ml in enumerate(menu_list_group):
     #     chapter_url_base = ml[0]

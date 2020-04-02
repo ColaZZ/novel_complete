@@ -11,6 +11,7 @@ from scrapy_redis.spiders import RedisSpider
 
 from ..utils import changeChineseNumToArab
 from ..items import DailyUpdateItem
+import crawl_35.spiders as du
 
 
 CATEGORY_MAPS = {
@@ -25,11 +26,10 @@ CATEGORY_MAPS = {
 }
 
 
-class DailySpider(CrawlSpider):
+class DailySpider(du.DailySpider):
     name = 'crawl_35'
     allowed_domains = ['35kushu.com']
     redis_key = "novel:start_ulrs"
-    start_urls = ['https://www.35kushu.com']
 
     # rules = (
     #     Rule(LinkExtractor(allow=r'Items/'), callback='parse_item', follow=True),
