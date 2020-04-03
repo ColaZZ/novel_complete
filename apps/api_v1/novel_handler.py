@@ -22,7 +22,7 @@ class CompleteHandler(FoundHandler):
         if not url:
             return self.write_json(status=-1, msg="请稍后重试")
 
-        url = "https://www.35kushu.com/35zwhtml/" + url
+        url = "https://www.xkushu.com/35zwhtml/" + url
         try:
             content = requests.get(url).content.decode("utf-8")
         except:
@@ -63,7 +63,7 @@ class ReSpiderHandler(FoundHandler):
 
         cur = self.cur
         # start_urls = ['https://www.35kushu.com']
-        allowed_domain = '35kushu.com'
+        allowed_domain = 'xkushu.com'
         sql = "select url, category_id from articles where id = %s"
         cur.execute(sql, (article_id))
         result = cur.fetchone()
@@ -112,7 +112,7 @@ class ReSpiderHandler(FoundHandler):
             temp_path_base = str(url)
             tp_list = temp_path_base.split("/")
             temp_path = tp_list[1]
-            cur_path = "/volume/novel_context" + os.path.sep + allowed_domain
+            cur_path = "/volume/novel_context" + os.path.sep + "35kushu.com"
             target_path = cur_path + os.path.sep + str(category_id) + os.path.sep + temp_path
             filename_path = cur_path + os.path.sep + str(category_id) + os.path.sep + temp_path + \
                             str(chapter_url_base[:-5]) + '.txt'

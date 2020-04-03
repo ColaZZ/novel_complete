@@ -21,7 +21,7 @@ import crawl_article.spiders as cs
 
 class ArticleSpider(cs.ArticleSpider):
     name = "crawl_article"
-    allowed_domains = ["35kushu.com"]
+    allowed_domains = ["xkushu.com"]
 
     def parse(self, response):
         # start_ulrs = self.start_urls

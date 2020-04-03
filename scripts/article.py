@@ -8,7 +8,7 @@ from utils.chn_to_arab import changeChineseNumToArab
 
 
 def testSpider():
-    url = "https://www.35kushu.com/35zwhtml/98/98744/"
+    url = "https://www.xkushu.com/35zwhtml/98/98744/"
     content = requests.get(url).content.decode("utf-8")
     tree = etree.HTML(content)
 

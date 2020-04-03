@@ -28,7 +28,7 @@ CATEGORY_MAPS = {
 
 class DailySpider(du.DailySpider):
     name = 'crawl_35'
-    allowed_domains = ['35kushu.com']
+    allowed_domains = ['xkushu.com']
     redis_key = "novel:start_ulrs"
 
     # rules = (

@@ -56,11 +56,11 @@ class ArticlePipeline(object):
         except Exception as e:
             print("2", e)
 
-        allowed_domain = '35kushu.com'
+        # allowed_domain = 'xkushu.com'
         temp_path_base = str(article_url)
         tp_list = temp_path_base.split("/")
         temp_path = tp_list[1]
-        cur_path = "/volume/novel_context" + os.path.sep + allowed_domain
+        cur_path = "/volume/novel_context" + os.path.sep + "35kushu.com"
         target_path = cur_path + os.path.sep + str(category_id) + os.path.sep + temp_path
         filename_path = cur_path + os.path.sep + str(category_id) + os.path.sep + temp_path + \
                         str(chapter_url_base[:-5]) + '.txt'

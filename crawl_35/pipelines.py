@@ -62,7 +62,7 @@ class DailyUpdatePipeline(object):
         # 写入小说缩略图
         r = requests.get(thumb, stream=True)
         if r.status_code != 404:
-            thumb_path = "/volume/novel_context" + os.path.sep + "35kushu.com" + os.path.sep + "thumb"
+            thumb_path = "/volume/novel_context" + os.path.sep + "xkushu.com" + os.path.sep + "thumb"
             img_path = thumb_path + os.path.sep + str(chapter_url_base[:-5]) + ".jpg"
             # with open(img_path, 'wb') as f:
             #     for chunk in r.iter_content():
@@ -109,7 +109,7 @@ class DailyUpdatePipeline(object):
             print("2", e)
 
         # # linux路径 TODO
-        cur_path = "/volume/novel_context" + os.path.sep + allowed_domain
+        cur_path = "/volume/novel_context" + os.path.sep + "35kushu.com"
         target_path = cur_path + os.path.sep + str(category_id) + os.path.sep + temp_path
         filename_path = cur_path + os.path.sep + str(category_id) + os.path.sep + temp_path + os.path.sep + \
                         str(chapter_url_base[:-5]) + '.txt'
