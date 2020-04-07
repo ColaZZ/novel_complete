@@ -31,7 +31,7 @@ class CompleteHandler(FoundHandler):
         path_content = '//div[@id="main"]/div[@id="content"]/text()'
         node_content = tree.xpath(path_content)
         node_text = "<br><br>".join(node_content)
-        print(node_text)
+        # print(node_text)
 
         temp_path_base = str(url[33:])
         tp_list = temp_path_base.split("/")
@@ -107,7 +107,7 @@ class ReSpiderHandler(FoundHandler):
             chapter_txt = tree.xpath('//div[@id="main"]/div[@id="content"]/text()')
             chapter_txt = "<br><br>".join(chapter_txt[1:])
 
-            print(article_id, chapter_id, chapter_name, updated_at, chapter_sort)
+            # print(article_id, chapter_id, chapter_name, updated_at, chapter_sort)
 
             temp_path_base = str(url)
             tp_list = temp_path_base.split("/")
