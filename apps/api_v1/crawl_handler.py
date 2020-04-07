@@ -58,6 +58,9 @@ class CrawlArticleHandler(FoundHandler):
         job = self.get_argument("job", "")
         response = requests.get('http://localhost:6800/listjobs.json?project=crawl_article').json()
         ret = {'state': None}
+
+        print(response)
+
         for state in STATES:
             print(job)
             if job in [j['id'] for j in response[state]]:

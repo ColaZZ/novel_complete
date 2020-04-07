@@ -105,7 +105,7 @@ class DailyUpdatePipeline(object):
         status = item.get('status', '')
 
         allowed_domain = item.get('allowed_domain', '')
-        article_url_base = item.get('article_url_base', '')
+        article_url_base = item.get('chapter_url_base', '')
         lastest_chapter_id = item.get('lastest_chapter_id', '')
         words = item.get('words', '')
 
