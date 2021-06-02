@@ -70,7 +70,7 @@ tornado==6.0.3
 Twisted==19.10.0
 ufw==0.36
 unattended-upgrades==0.1
-urllib3==1.25.7
+urllib3==1.26.5
 w3lib==1.21.0
 WTForms==2.2.1
 WTForms-JSON==0.3.3
